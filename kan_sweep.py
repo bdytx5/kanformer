@@ -54,7 +54,7 @@ def train():
         config_filename = f'config_{run.id}.py'
         update_config_file(run.config, run.id, config_filename)
         # Execute the training script with the specific config file
-        subprocess.run(['python', 'train.py', config_filename])
+        subprocess.run(['python', 'train_sweep.py', config_filename])
         run.finish()
         # Optionally, clean up the config file after the run
         # os.remove(config_filename)
